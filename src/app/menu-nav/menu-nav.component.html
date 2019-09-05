@@ -39,7 +39,7 @@
                             {{street}}
                           </mat-option>
                         </mat-autocomplete> -->
-                        <ejs-autocomplete id='atcelement' [dataSource]='searchData' [fields]='fields' [placeholder]='text' [autofill]='autofill'></ejs-autocomplete>
+                        <ejs-autocomplete id='atcelement' [dataSource]='arr' [fields]='fields' [placeholder]='text' [autofill]='autofill'></ejs-autocomplete>
                 </div>
 
                 <div class="form-group col-md-3">
@@ -72,8 +72,18 @@
                           {{street}}
                         </mat-option>
                       </mat-autocomplete> -->
-                      <ejs-autocomplete id='atcelement' [dataSource]='searchData3' [fields]='fields3' [placeholder]='text2' [autofill]='autofill3'></ejs-autocomplete>
-                      </div>
+                      <!-- <ejs-autocomplete id='atcelement' [dataSource]='searchData3' [fields]='fields3' [placeholder]='text2' [autofill]='autofill3'></ejs-autocomplete> -->
+                      <!-- <form class="example-form"> -->
+
+                          <input type="text" placeholder="Search Specialty" aria-label="Assignee" matInput [formControl]="myControl" [matAutocomplete]="auto">
+                          <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+                            <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                              {{option.Name}}
+                            </mat-option>
+                          </mat-autocomplete>
+
+                      <!-- </form> -->
+                    </div>
               </div>
 
                 <div class="form-row">
@@ -99,7 +109,7 @@
                       <label>Concierge</label>
                     </div>
                   <div class="form-group col-md-2">
-                    <label >Scheduler Start Time</label>
+                    <label>Scheduler Start Time</label>
                     <select  class="form-control">
                         <option value="10am">10am</option>
                         <option value="11am">11am</option>
@@ -109,7 +119,7 @@
                     </select>
                   </div>
                   <div class="form-group col-md-2">
-                    <label >Scheduler End Time</label>
+                    <label>Scheduler End Time</label>
                     <select  class="form-control">
                         <option value="7am">7am</option>
                         <option value="8am">8am</option>

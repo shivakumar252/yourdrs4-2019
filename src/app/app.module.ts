@@ -21,6 +21,8 @@ import { DatePickerModule } from '@syncfusion/ej2-angular-calendars';
 import { ScheduleAllModule,  } from '@syncfusion/ej2-angular-schedule';
 import { CommonModule } from '@angular/common';
 import { AutoCompleteModule } from '@syncfusion/ej2-angular-dropdowns';
+import { HttpClientModule } from '@angular/common/http';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 @NgModule({
   declarations: [
@@ -44,9 +46,8 @@ import { AutoCompleteModule } from '@syncfusion/ej2-angular-dropdowns';
     DatePickerAllModule,
     DatePickerModule,
     ScheduleAllModule,
-    CommonModule,
-
-    AutoCompleteModule
+    CommonModule,HttpClientModule,
+     AutoCompleteModule,MatAutocompleteModule
 
   ],
   providers: [],

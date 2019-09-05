@@ -110,3 +110,12 @@ input.form-control {
 select.form-control {
   float: right;
 }
+select.form-control {
+  padding-right: 97px;
+  color: brown;
+}
+button.btn.btn-primary {
+  margin-top: 31px;
+  margin-left: 72px;
+  margin-right: 123px;
+}
