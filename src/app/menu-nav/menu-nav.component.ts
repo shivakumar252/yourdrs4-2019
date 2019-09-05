@@ -23,97 +23,120 @@ export class MenuNavComponent implements OnInit {
  closeResult: string;
   selectedOption:string;
   control = new FormControl();
-  streets: string[] = ['Any', 'Hema', 'parkwest surgical LLT', 'Fifth Avenue'];
-  filteredStreets: Observable<string[]>;
-  keyword = 'location';
-  public countries = [
-    {
-      practice: '',
-      location: 'Albania',
-      provider:'1',
-      speciality:'',
+   public searchData: { [key: string]: Object }[] = [
+    { Name: 'Australia', Code: 'AU',Provider:'ABC',speciality:'a' },
+    { Name: 'Bermuda', Code: 'BM',Provider:'ABC',speciality:'b' },
+    { Name: 'Canada', Code: 'CA',Provider:'ABC',speciality:'c' },
+    { Name: 'Cameroon', Code: 'CM',Provider:'ABC',speciality:'d' },
+    { Name: 'Denmark', Code: 'DK',Provider:'ABC',speciality:'e' },
+    { Name: 'France', Code: 'FR',Provider:'ABC',speciality:'a' },
+    { Name: 'Finland', Code: 'FI',Provider:'ABC',speciality:'b' },
+    { Name: 'Germany', Code: 'DE',Provider:'ABC' ,speciality:'b'},
+    { Name: 'Greenland', Code: 'GL',Provider:'ABC',speciality:'b' },
+    { Name: 'Hong Kong', Code: 'HK',Provider:'ABC' ,speciality:'b'},
+    { Name: 'India', Code: 'IN',Provider:'ABC',speciality:'b' },
+    { Name: 'Italy', Code: 'IT' ,Provider:'ABC',speciality:'b'},
+    { Name: 'Japan', Code: 'JP' ,Provider:'ABC',speciality:'b'},
+    { Name: 'Mexico', Code: 'MX',Provider:'ABC',speciality:'b' },
+    { Name: 'Norway', Code: 'NO',Provider:'ABC',speciality:'b' },
+    { Name: 'Poland', Code: 'PL',Provider:'ABC',speciality:'b' },
+    { Name: 'Switzerland', Code: 'CH',Provider:'ABC',speciality:'b' },
+    { Name: 'United Kingdom', Code: 'GB',Provider:'ABC',speciality:'b' },
+    { Name: 'United States', Code: 'US',Provider:'ABC',speciality:'b' }];
+    // maps the appropriate column to fields property
+    public fields: Object = { value: "Name" };
+    // set the placeholder to the AutoComplete input
+    public text: string = "Find a country";
+    //enable the highlight property to highlight the matched character in suggestion list
+    public autofill: Boolean = true;
 
-    },
-    {
-      practice:'xyz',
-      location: 'brazil',
-      provider:'1',
-      speciality:'',
-    },
-    {
-      practice: '1',
-      location: 'Albania',
-      provider:'1',
-      speciality:'',
-    },
-    {
-      practice: '',
-      location: 'Albania',
-      provider:'1',
-      speciality:'',
-    },
-    {
-      practice: '',
-      location: 'Albania',
-      provider:'1',
-      speciality:''
-    },
-    {
-      practice: '',
-      location: 'Albania',
-      provider:'1',
-      speciality:''
-    },
-    {
-      practice: '',
-      location: 'Albania',
-      provider:'1',
-      speciality:''
-    },
-    {
-      practice: '',
-      location: 'Albania',
-      provider:'1',
-      speciality:''
-    },
-    {
-      practice: '',
-      location: 'Albania',
-      provider:'1',
-      speciality:''
-    },
-    {
-      practice: '',
-      location: 'Albania',
-      provider:'1',
-      speciality:''
-    },
-    {
-      practice: '',
-      location: 'Albania',
-      provider:'1',
-      speciality:''
-    },
-    {
-      practice: '',
-      location: 'Albania',
-      provider:'1',
-      speciality:''
-    }
-  ];
-    selectEvent(item) {
-    // do something with selected item
-  }
+    public searchData1: { [key: string]: Object }[] = [
+      { Name: 'Australia', Code: 'AU',Provider:'ABC',speciality:'b' },
+      { Name: 'Bermuda', Code: 'BM',Provider:'DEF',speciality:'b' },
+      { Name: 'Canada', Code: 'CA',Provider:'GHI',speciality:'b'},
+      { Name: 'Cameroon', Code: 'CM',Provider:'GHI',speciality:'b' },
+      { Name: 'Denmark', Code: 'DK',Provider:'GHI',speciality:'b'},
+      { Name: 'France', Code: 'FR',Provider:'GHI',speciality:'b'},
+      { Name: 'Finland', Code: 'FI' ,Provider:'GHI',speciality:'b'},
+      { Name: 'Germany', Code: 'DE' ,Provider:'GHI',speciality:'b'},
+      { Name: 'Greenland', Code: 'GL' ,Provider:'GHI',speciality:'b'},
+      { Name: 'Hong Kong', Code: 'HK' ,Provider:'GHI',speciality:'b'},
+      { Name: 'India', Code: 'IN',Provider:'GHI',speciality:'b' },
+      { Name: 'Italy', Code: 'IT',Provider:'GHI',speciality:'b' },
+      { Name: 'Japan', Code: 'JP' ,Provider:'GHI',speciality:'b'},
+      { Name: 'Mexico', Code: 'MX',Provider:'GHI',speciality:'b' },
+      { Name: 'Norway', Code: 'NO',Provider:'GHI',speciality:'b' },
+      { Name: 'Poland', Code: 'PL',Provider:'GHI',speciality:'b'},
+      { Name: 'Switzerland', Code: 'CH',Provider:'GHI',speciality:'b' },
+      { Name: 'United Kingdom', Code: 'GB',Provider:'GHI',speciality:'b' },
+      { Name: 'United States', Code: 'US',Provider:'GHI',speciality:'b' }];
+      // maps the appropriate column to fields property
+      public fields1: Object = { value: "Code" };
+      // set the placeholder to the AutoComplete input
+      public text1: string = "Find a code";
+      //enable the highlight property to highlight the matched character in suggestion list
+      public autofill1: Boolean = true;
 
-  onChangeSearch(search: string) {
-    // fetch remote data from here
-    // And reassign the 'data' which is binded to 'data' property.
-  }
+      public searchData2: { [key: string]: Object }[] = [
+        { Name: 'Australia', Code: 'AU',Provider:'ABC',speciality:'b' },
+        { Name: 'Bermuda', Code: 'BM',Provider:'DEF',speciality:'b' },
+        { Name: 'Canada', Code: 'CA' ,Provider:'GHI',speciality:'b'},
+        { Name: 'Cameroon', Code: 'CM',Provider:'GHI' ,speciality:'b'},
+        { Name: 'Denmark', Code: 'DK',Provider:'GHI',speciality:'b' },
+        { Name: 'France', Code: 'FR' ,Provider:'GHI',speciality:'b'},
+        { Name: 'Finland', Code: 'FI',Provider:'GHI' ,speciality:'b'},
+        { Name: 'Germany', Code: 'DE' ,Provider:'ABC',speciality:'b'},
+        { Name: 'Greenland', Code: 'GL',Provider:'ABC',speciality:'b' },
+        { Name: 'Hong Kong', Code: 'HK',Provider:'ABC',speciality:'b' },
+        { Name: 'India', Code: 'IN' ,Provider:'ABC',speciality:'b'},
+        { Name: 'Italy', Code: 'IT',Provider:'ABC',speciality:'b' },
+        { Name: 'Japan', Code: 'JP',Provider:'ABC',speciality:'b'},
+        { Name: 'Mexico', Code: 'MX',Provider:'ABC',speciality:'b' },
+        { Name: 'Norway', Code: 'NO' ,Provider:'ABC',speciality:'b'},
+        { Name: 'Poland', Code: 'PL',Provider:'ABC',speciality:'b' },
+        { Name: 'Switzerland', Code: 'CH',Provider:'ABC',speciality:'b' },
+        { Name: 'United Kingdom', Code: 'GB',Provider:'ABC',speciality:'b' },
+        { Name: 'United States', Code: 'US',Provider:'ABC',speciality:'b' }];
+        // maps the appropriate column to fields property
+        public fields2: Object = { value: "Provider" };
+        // set the placeholder to the AutoComplete input
+        public text2: string = "Find a Provider";
+        //enable the highlight property to highlight the matched character in suggestion list
+        public autofill2: Boolean = true;
 
-  onFocused(e) {
-    // do something
-  }
-  public data: Object[] = <Object[]>extend([], doctorData);
+        public searchData3: { [key: string]: Object }[] = [
+          { Name: 'Australia', Code: 'AU',Provider:'ABC',speciality:'b' },
+          { Name: 'Bermuda', Code: 'BM',Provider:'DEF',speciality:'b' },
+          { Name: 'Canada', Code: 'CA' ,Provider:'GHI',speciality:'b'},
+          { Name: 'Cameroon', Code: 'CM',Provider:'GHI' ,speciality:'b'},
+          { Name: 'Denmark', Code: 'DK',Provider:'GHI',speciality:'b' },
+          { Name: 'France', Code: 'FR' ,Provider:'GHI',speciality:'b'},
+          { Name: 'Finland', Code: 'FI',Provider:'GHI' ,speciality:'b'},
+          { Name: 'Germany', Code: 'DE' ,Provider:'ABC',speciality:'b'},
+          { Name: 'Greenland', Code: 'GL',Provider:'ABC',speciality:'b' },
+          { Name: 'Hong Kong', Code: 'HK',Provider:'ABC',speciality:'b' },
+          { Name: 'India', Code: 'IN' ,Provider:'ABC',speciality:'b'},
+          { Name: 'Italy', Code: 'IT',Provider:'ABC',speciality:'b' },
+          { Name: 'Japan', Code: 'JP',Provider:'ABC',speciality:'b'},
+          { Name: 'Mexico', Code: 'MX',Provider:'ABC',speciality:'b' },
+          { Name: 'Norway', Code: 'NO' ,Provider:'ABC',speciality:'b'},
+          { Name: 'Poland', Code: 'PL',Provider:'ABC',speciality:'b' },
+          { Name: 'Switzerland', Code: 'CH',Provider:'ABC',speciality:'b' },
+          { Name: 'United Kingdom', Code: 'GB',Provider:'ABC',speciality:'b' },
+          { Name: 'United States', Code: 'US',Provider:'ABC',speciality:'b' }];
+          // maps the appropriate column to fields property
+          public fields3: Object = { value: "speciality" };
+          // set the placeholder to the AutoComplete input
+          public text3: string = "Find a Provider";
+          //enable the highlight property to highlight the matched character in suggestion list
+          public autofill3: Boolean = true;
+
+
+
+
+
+
+    public data: Object[] = <Object[]>extend([], doctorData);
     public selectedDate: Date = new Date(2018, 3, 1);
     public currentView: View = 'WorkWeek';
     public allowResizing: boolean = false;

@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatToolbarModule, MatIconModule, MatCheckboxModule, MatExpansionModule, MatAutocompleteModule } from '@angular/material';
+import { MatToolbarModule, MatIconModule, MatCheckboxModule} from '@angular/material';
 import { AppointmentsdashboardComponent } from './appointmentsdashboard/appointmentsdashboard.component';
 import { AppointmentschedulerComponent } from './appointmentscheduler/appointmentscheduler.component';
 import { MycasesComponent } from './mycases/mycases.component';
@@ -19,9 +19,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { DatePickerAllModule, DateTimePickerAllModule } from '@syncfusion/ej2-angular-calendars';
 import { DatePickerModule } from '@syncfusion/ej2-angular-calendars';
 import { ScheduleAllModule,  } from '@syncfusion/ej2-angular-schedule';
-import {AutocompleteLibModule} from 'angular-ng-autocomplete';
 import { CommonModule } from '@angular/common';
-
+import { AutoCompleteModule } from '@syncfusion/ej2-angular-dropdowns';
 
 @NgModule({
   declarations: [
@@ -45,8 +44,10 @@ import { CommonModule } from '@angular/common';
     DatePickerAllModule,
     DatePickerModule,
     ScheduleAllModule,
-    AutocompleteLibModule,CommonModule,MatExpansionModule,
-    MatAutocompleteModule
+    CommonModule,
+
+    AutoCompleteModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

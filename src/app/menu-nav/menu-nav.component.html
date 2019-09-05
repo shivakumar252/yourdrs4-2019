@@ -33,42 +33,46 @@
               <div class="form-group row">
                   <div class="form-group col-md-3">
                       <label>Practice</label><br>
-                <input type="text" [formControl]="control" [matAutocomplete]="auto">
+                <!-- <input type="text" [formControl]="control" [matAutocomplete]="auto">
                         <mat-autocomplete #auto="matAutocomplete">
                           <mat-option *ngFor="let street of filteredStreets | async" [value]="street">
                             {{street}}
                           </mat-option>
-                        </mat-autocomplete>
+                        </mat-autocomplete> -->
+                        <ejs-autocomplete id='atcelement' [dataSource]='searchData' [fields]='fields' [placeholder]='text' [autofill]='autofill'></ejs-autocomplete>
                 </div>
 
                 <div class="form-group col-md-3">
                   <label >Location</label><br>
-                  <input type="text" [formControl]="control" [matAutocomplete]="auto">
+                  <!-- <input type="text" [formControl]="control" [matAutocomplete]="auto">
                         <mat-autocomplete #auto="matAutocomplete">
                           <mat-option *ngFor="let street of  filteredStreets | async" [value]="street">
                             {{street}}
                           </mat-option>
-                        </mat-autocomplete>
+                        </mat-autocomplete> -->
+                        <ejs-autocomplete id='atcelement' [dataSource]='searchData1' [fields]='fields1' [placeholder]='text1' [autofill]='autofill1'></ejs-autocomplete>
                   </div>
 
                   <div class="form-group col-md-3">
                     <label >Provider/Physician Assistant</label>
-                     <input type="text" [formControl]="control" [matAutocomplete]="auto">
+                     <!-- <input type="text" [formControl]="control" [matAutocomplete]="auto">
                      <mat-autocomplete #auto="matAutocomplete">
                        <mat-option *ngFor="let street of filteredStreets | async" [value]="street">
                          {{street}}
                        </mat-option>
-                     </mat-autocomplete>
+                     </mat-autocomplete> -->
+                     <ejs-autocomplete id='atcelement' [dataSource]='searchData2' [fields]='fields2' [placeholder]='text2' [autofill]='autofill2'></ejs-autocomplete>
                     </div>
 
                     <div class="form-group col-md-3">
                       <label >Specialty</label><br>
-                      <input type="text" [formControl]="control" [matAutocomplete]="auto">
+                      <!-- <input type="text" [formControl]="control" [matAutocomplete]="auto">
                       <mat-autocomplete #auto="matAutocomplete">
                         <mat-option *ngFor="let street of filteredStreets | async" [value]="street">
                           {{street}}
                         </mat-option>
-                      </mat-autocomplete>
+                      </mat-autocomplete> -->
+                      <ejs-autocomplete id='atcelement' [dataSource]='searchData3' [fields]='fields3' [placeholder]='text2' [autofill]='autofill3'></ejs-autocomplete>
                       </div>
               </div>
 
